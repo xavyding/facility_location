@@ -2,6 +2,8 @@
 Facility Location discrete optimization solvers, based on ortools lib.
 
 
+
+
 Optimizes the total cost of opening, maintaining facilities and shipping to customers:
 Each customer is assigned to exactly one facility.
 The cost of shipping is the euclidian distance between the facility location and customer location.
@@ -16,8 +18,8 @@ The solver takes two primary inputs:
 
 Where the structs are defined as follows:
 
-Facility = namedtuple("Facility", ['index', 'setup_cost', 'capacity', 'location'])
-Customer = namedtuple("Customer", ['index', 'demand', 'location'])
+- Facility = namedtuple("Facility", ['index', 'setup_cost', 'capacity', 'location'])
+- Customer = namedtuple("Customer", ['index', 'demand', 'location'])
 
 (the types are:
  - 'index' -> int
@@ -31,5 +33,7 @@ Customer = namedtuple("Customer", ['index', 'demand', 'location'])
 -----------------------------------------------------------------------------------------------------------
 
 The output 'solution' is a list of size equal to the number of customers.
+
 Each item maps the index customer to the index of facility.
+
 Example:  solution[3] == 1 means the customer N°3 is assigned to the facility N°1. (we can by the way deduce that the facility N°1 is active)
